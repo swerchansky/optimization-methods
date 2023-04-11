@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+for i in $(find *.profile)
+do 
+    gprof2dot -f pstats $i | dot -Tpng -o $(echo $i | sed 's/.profile/.png/')
+done
+
